@@ -1,7 +1,7 @@
 Dual list box Widget for Yii 2
 ==================================
 
-`Dual list box Widget` is a wrapper for [Dual List Box plugin for jQuery and Bootstrap](https://github.com/Geodan/DualListBox),
+`Dual list box Widget` is a wrapper for [Dual List Box plugin for jQuery and Bootstrap](https://github.com/SteveSimpson/DualListBox),
 Bootstrap Dual List Box is a dual list box implementation especially designed for Bootstrap and jQuery. This control is quite easy for users to understand and use. Also it is possible to work with very large multi-selects without confusing the user.
 
 The MIT License (MIT)
@@ -14,13 +14,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require --prefer-dist maksyutin/yii2-dual-list-box "dev-master"
+php composer.phar require --prefer-dist ssimpson/yii2-dual-list-box "dev-master"
 ```
 
 or add
 
 ```
-"maksyutin/yii2-dual-list-box": "dev-master"
+"ssimpson/yii2-dual-list-box": "dev-master"
 ```
 
 to the require section of your `composer.json` file.
@@ -36,7 +36,7 @@ Once the extension is installed, simply use it in your code:
 ### View ###
 ```php
 
-echo maksyutin\duallistbox\Widget::widget([
+echo ssimpson\duallistbox\Widget::widget([
     'model' => $model,
     'attribute' => 'list_regions',
     'title' => 'города',

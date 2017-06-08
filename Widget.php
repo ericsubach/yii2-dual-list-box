@@ -19,6 +19,7 @@ class Widget extends InputWidget
     public $data;
     public $data_id;
     public $data_value;
+    public $json_uri;
 
     public function init()
     {
@@ -47,7 +48,12 @@ class Widget extends InputWidget
 
         $this->attributes = $this->model->attributes();
 
-        $data = ($this->data) ? $this->data->all() : [];
+        // the all() call here does not really fit anyway, this should just be an array
+        $data = ($this->data) ? $this->data : [];
+
+        if (is_array($data)) {
+            $data = (object) $data;
+        }
 
         $ret_sel = '';
         $ret = '<select style="display: none;" multiple = "multiple">';
@@ -93,10 +99,16 @@ class Widget extends InputWidget
 
         $inputIdLower = strtolower($inputId);
 
+        if (isset($this->json_uri) && $this->json_uri != '' && $this->json_uri != 'local.json') {
+            $json = "json: true,\n                uri=".$this->json_uri.",";
+        } else {
+            $json = "json: false,";
+        }
+
         $js = <<<SCRIPT
 
             $('#$inputId').DualListBox({
-                json: false,
+                $json
                 name: '$idModel',
                 id: '$inputIdLower',
                 title: '$this->nametitle',

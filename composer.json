@@ -1,9 +1,9 @@
 {
-	"name": "maksyutin/yii2-dual-list-box",
+	"name": "ssimpson/yii2-dual-list-box",
 	"description": "Dual list box Widget for Yii 2",
 	"type": "yii2-extension",
 	"keywords": ["yii2", "yii 2", "dual-list-box", "duallistbox", "dual listview", "widget"],
-	"license": "proprietary",
+	"license": "MIT",
 	"authors": [
 		{
 			"name": "Maksyutin Dmitriy",
@@ -14,18 +14,22 @@
 			"name": "Geodan B.V.",
 			"homepage": "http://www.geodan.nl"
 		}
+		{
+            "name": "Steve Simpson",
+            "email": "software@lcsas.us"
+        }
 	],
 	"minimum-stability": "dev",
 	"support": {
-		"issues": "https://github.com/maksyutin/yii2-dual-list-box/issues?state=open",
-		"source": "https://github.com/maksyutin/yii2-dual-list-box"
+		"issues": "https://github.com/SteveSimpson/yii2-dual-list-box/issues?state=open",
+		"source": "https://github.com/SteveSimpson/yii2-dual-list-box"
 	},
 	"require": {
 		"yiisoft/yii2": "~2.0"
 	},
 	"autoload": {
 		"psr-4": {
-			"maksyutin\\duallistbox\\": ""
+			"ssimpson\\duallistbox\\": ""
 		}
 	}
 }
