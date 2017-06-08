@@ -1,13 +1,13 @@
 <?php
 
-namespace maksyutin\duallistbox;
+namespace ssimpson\duallistbox;
 
 use yii\web\AssetBundle;
 
 /**
  * Asset bundle for yii2-dual-list-box Widget
  *
- * @author Maksyutin Dmitriy <maksyutin@yandex.ru>
+ * @author Steve Simpson <software@lcsas.us>
  * @since 1.0
  */
 class Asset extends AssetBundle
