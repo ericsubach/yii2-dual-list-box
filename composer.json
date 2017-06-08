@@ -19,7 +19,7 @@
             "email": "software@lcsas.us"
         }
 	],
-	"minimum-stability": "dev",
+	"minimum-stability": "stable",
 	"support": {
 		"issues": "https://github.com/SteveSimpson/yii2-dual-list-box/issues?state=open",
 		"source": "https://github.com/SteveSimpson/yii2-dual-list-box"
