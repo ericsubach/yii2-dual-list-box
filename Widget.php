@@ -1,6 +1,6 @@
 <?php
 
-namespace maksyutin\duallistbox;
+namespace ssimpson\duallistbox;
 
 use yii\helpers\Html;
 use yii\helpers\Json;
