@@ -17,6 +17,13 @@ Either run
 php composer.phar require --prefer-dist ssimpson/yii2-dual-list-box "dev-master"
 ```
 
+or (if you have composer in your path)
+
+```
+composer require --prefer-dist ssimpson/yii2-dual-list-box "dev-master"
+```
+
+
 or add
 
 ```
@@ -39,17 +46,17 @@ Once the extension is installed, simply use it in your code:
 echo ssimpson\duallistbox\Widget::widget([
     'model' => $model,
     'attribute' => 'list_regions',
-    'title' => 'города',
+    'title' => 'Example Title',
     'data' => $region,
     'data_id'=> 'id',
     'data_value'=> 'name',
+    'json_uri' => 'http://example.com/data',
     'lngOptions' => [
-        'warning_info' => 'Вы уверены, что хотите выбрать такое количество элементов?
-                           Возможно Ваш браузер может перестанет отвечать на запросы..',
-        'search_placeholder' => 'Фильтр',
-        'showing' => ' - показано',
-        'available' => 'Имеющиеся',
-        'selected' => 'Выбранные'
+        'warning_info' => 'Are you sure you want to move this many items? Doing so can cause your browser to become unresponsive.',
+        'search_placeholder' => 'Filter',
+        'showing' => ' - showing',
+        'available' => 'Available',
+        'selected' => 'Selected'
     ]
   ]);
 ```
@@ -57,7 +64,7 @@ model - model for form
 attribute - model attribute for form
 title - view name for attribute
 
-data - model (Region::find());
+data - model (Region::find()->all()) OR array['id'=>1,'name'=>'']; **This is a change from the upstream project.** 
 data_id - name attribute for id
 data_value - name attribute for value
 
@@ -66,7 +73,7 @@ data_value - name attribute for value
 ```php
         $model = new ModelForm;
         
-        $region = Region::find();
+        $region = Region::find()->all();
 ```
 
 ### Controller SAVE ###
