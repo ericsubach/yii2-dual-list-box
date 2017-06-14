@@ -75,7 +75,7 @@
             options['parentElement'] = '#' + options.parent;
 
             selected = $.extend([{}], selected);
-
+            
             if (options.json) {
                 addElementsViaJSON(options, selected);
             } else {
@@ -106,10 +106,15 @@
                     text = item[options.text];
                 }
 
+                var mySelected = false;
+                if ('selected' in item && item.selected == true) {
+                	mySelected = true;
+                }
+                
                 $('<option>', {
                     value: item[options.value],
                     text: text,
-                    selected: (selected.some(function (e) { return e[options.value] === item[options.value] }) === true)
+                    selected: mySelected
                 }).appendTo(options.element);
             });
 

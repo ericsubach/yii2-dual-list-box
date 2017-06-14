@@ -51,7 +51,7 @@ class Widget extends InputWidget
         // the all() call here does not really fit anyway, this should just be an array
         $data = ($this->data) ? $this->data : [];
 
-        if (is_array($data)) {
+        if (is_array($data) && count($data)) {
             $data = (object) $data;
         }
 
@@ -100,7 +100,7 @@ class Widget extends InputWidget
         $inputIdLower = strtolower($inputId);
 
         if (isset($this->json_uri) && $this->json_uri != '' && $this->json_uri != 'local.json') {
-            $json = "json: true,\n                uri=".$this->json_uri.",";
+            $json = "json: true,\n                uri: ".$this->json_uri.",";
         } else {
             $json = "json: false,";
         }
