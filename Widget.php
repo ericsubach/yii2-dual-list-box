@@ -59,18 +59,20 @@ class Widget extends InputWidget
         $ret = '<select style="display: none;" multiple = "multiple">';
         $cnt = 0;
 	    $flipped_selected = array_flip($selected);
-        foreach ($data as $key => $value) {
+	    if (!(isset($this->json_uri) && $this->json_uri != '' && $this->json_uri != 'local.json')) {
+            foreach ($data as $key => $value) {
 
-            // Check if data item is selected
-            if ( isset($flipped_selected[$value->{$this->data_id}]) ) {
-                // Add to selected array
-                $ret_sel .= '<option value="' . htmlspecialchars($value->{$this->data_id}) . '">' . htmlspecialchars($value->{$this->data_value}) . '</option>';
-                $cnt++;
-            } else {
-                // Add to options array
-                $ret .= '<option value="' . htmlspecialchars($value->{$this->data_id}) . '">' . htmlspecialchars($value->{$this->data_value}) . '</option>';
+                // Check if data item is selected
+                if ( isset($flipped_selected[$value->{$this->data_id}]) ) {
+                    // Add to selected array
+                    $ret_sel .= '<option value="' . htmlspecialchars($value->{$this->data_id}) . '">' . htmlspecialchars($value->{$this->data_value}) . '</option>';
+                    $cnt++;
+                } else {
+                    // Add to options array
+                    $ret .= '<option value="' . htmlspecialchars($value->{$this->data_id}) . '">' . htmlspecialchars($value->{$this->data_value}) . '</option>';
+                }
             }
-        }
+	    }
         $ret .= '</select>';
 
         // If items were pre-selected add them to the selected select list
