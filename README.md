@@ -1,10 +1,10 @@
 Dual list box Widget for Yii 2
 ==================================
 
-`Dual list box Widget` is a wrapper for [Dual List Box plugin for jQuery and Bootstrap](https://github.com/SteveSimpson/DualListBox),
+`Dual list box Widget` is a wrapper for Dual List Box plugin for jQuery and Bootstrap,
 Bootstrap Dual List Box is a dual list box implementation especially designed for Bootstrap and jQuery. This control is quite easy for users to understand and use. Also it is possible to work with very large multi-selects without confusing the user.
 
-This version differes from the parent in that it works with json data pulls.
+This version differes from the parent in that it works with json data pulls. Both the php/yii wrapper and the actual Javascript have been updated to get this working.
 
 The MIT License (MIT)
 
