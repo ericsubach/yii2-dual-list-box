@@ -102,6 +102,15 @@ data_value - name attribute for value
 
 in this example, only Peters Sloan would be selected by default
 
+#### To refresh the data or use a different data source
+
+```
+    $('#list_regions').update({
+        uri: 'http://example.com/data2',
+    });
+```
+
+
 ### Controller VIEW ###
 
 ```php
