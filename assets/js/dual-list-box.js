@@ -19,6 +19,8 @@
  */
 
 (function($) {
+	var loadedOptions;
+	
     /** Initializes the DualListBox code as jQuery plugin. */
     $.fn.DualListBox = function(paramOptions, selected) {
         return this.each(function () {
@@ -76,6 +78,8 @@
 
             selected = $.extend([{}], selected);
             
+            loadedOptions = options;
+            
             if (options.json) {
                 addElementsViaJSON(options, selected);
             } else {
@@ -87,7 +91,7 @@
     /** Retrieves all the option elements through a JSON request. */
     function addElementsViaJSON(options, selected) {
         var multipleTextFields = false;
-
+        
         if (options.text.indexOf(':') > -1) {
             var textToUse = options.text.split(':');
 
@@ -378,6 +382,52 @@
         });
     };
 
+    $.fn.update = function(updates) {
+    	
+    	var options = $.extend({}, loadedOptions, updates);
+    	var multipleTextFields = false;
+        var unselected = $('.unselected');
+        var selected = $('.selected');
+        
+        unselected.empty();
+        selected.empty();
+
+        if (options.text.indexOf(':') > -1) {
+            var textToUse = options.text.split(':');
+
+            if (textToUse.length > 1) {
+                multipleTextFields = true;
+            }
+        }
+
+        $.getJSON(options.uri, function(json) {
+            $.each(json, function(key, item) {
+                var text = '';
+
+                if (multipleTextFields) {
+                    textToUse.forEach(function (entry) { text += item[entry] + ' '; });
+                } else {
+                    text = item[options.text];
+                }
+
+                var mySelected = false;
+                if ('selected' in item && item.selected == true) {
+                	mySelected = true;
+                }
+                
+                $('<option>', {
+                    value: item[options.value],
+                    text: text,
+                    selected: mySelected
+                }).appendTo(options.element);
+            });
+
+            parseStubListBox(options);
+        });
+            
+        return this;
+    };
+    
     /** Simple delay function that can wrap around an existing function and provides a callback. */
     var delay = (function() {
         var timer = 0;
