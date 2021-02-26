@@ -1,5 +1,5 @@
 {
-	"name": "ssimpson/yii2-dual-list-box",
+	"name": "esubach/yii2-dual-list-box",
 	"description": "Dual list box Widget for Yii 2",
 	"type": "yii2-extension",
 	"keywords": ["yii2", "yii 2", "dual-list-box", "duallistbox", "dual listview", "widget"],
@@ -15,21 +15,24 @@
 			"homepage": "http://www.geodan.nl"
 		},
 		{
-            "name": "Steve Simpson",
-            "email": "software@lcsas.us"
-        }
+         "name": "Steve Simpson",
+         "email": "software@lcsas.us"
+      },
+      {
+         "name": "Eric Subach"
+      }
 	],
 	"minimum-stability": "dev",
 	"support": {
-		"issues": "https://github.com/SteveSimpson/yii2-dual-list-box/issues?state=open",
-		"source": "https://github.com/SteveSimpson/yii2-dual-list-box"
+		"issues": "https://github.com/ericsubach/yii2-dual-list-box/issues?state=open",
+		"source": "https://github.com/ericsubach/yii2-dual-list-box"
 	},
 	"require": {
 		"yiisoft/yii2": "~2.0"
 	},
 	"autoload": {
 		"psr-4": {
-			"ssimpson\\duallistbox\\": ""
+			"esubach\\duallistbox\\": ""
 		}
 	}
 }

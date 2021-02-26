@@ -32,6 +32,7 @@
                 uri:        'local.json',       // JSON file that can be opened for the data.
                 value:      'id',               // Value that is assigned to the value field in the option.
                 text:       'name',             // Text that is assigned to the option field.
+                visuals:    'visuals',          // Visual changes to apply to the element, as a string.
                 title:      'Example',          // Title of the dual list box.
                 json:       true,               // Whether to retrieve the data through JSON.
                 timeout:    500,                // Timeout for when a filter search is started.
@@ -115,11 +116,20 @@
                 	mySelected = true;
                 }
                 
-                $('<option>', {
+                var elem = $('<option>', {
                     value: item[options.value],
                     text: text,
                     selected: mySelected
-                }).appendTo(options.element);
+                });
+
+                var red = false;
+                if ('visuals' in item) {
+                    if (item.visuals == 'red') {
+                        elem.css('color', 'red');
+                    }
+                }
+
+                elem.appendTo(options.element);
             });
 
             construct(options);

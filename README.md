@@ -16,20 +16,20 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require --prefer-dist ssimpson/yii2-dual-list-box "dev-master"
+php composer.phar require --prefer-dist esubach/yii2-dual-list-box "dev-master"
 ```
 
 or (if you have composer in your path)
 
 ```
-composer require --prefer-dist ssimpson/yii2-dual-list-box "dev-master"
+composer require --prefer-dist esubach/yii2-dual-list-box "dev-master"
 ```
 
 
 or add
 
 ```
-"ssimpson/yii2-dual-list-box": "dev-master"
+"esubach/yii2-dual-list-box": "dev-master"
 ```
 
 to the require section of your `composer.json` file.
@@ -46,7 +46,7 @@ Once the extension is installed, simply use it in your code:
 
 ```php
 
-echo ssimpson\duallistbox\Widget::widget([
+echo esubach\duallistbox\Widget::widget([
     'model' => $model,
     'attribute' => 'list_regions',
     'title' => 'Example Title',
@@ -88,7 +88,8 @@ data_value - name attribute for value
         "index": 1,
         "name": "Bailey Hoffman",
         "company": "Centrexin",
-        "email": "baileyhoffman@centrexin.com"
+        "email": "baileyhoffman@centrexin.com",
+        "visuals": "red"
     },
     {
         "index": 2,

@@ -1,6 +1,6 @@
 <?php
 
-namespace ssimpson\duallistbox;
+namespace esubach\duallistbox;
 
 use yii\web\AssetBundle;
 
